@@ -10,6 +10,7 @@ void solve_sys(ld x0, ld y0, int sys, ld eps=0.01){
     vector<ld> x(SIZE, 0);
     int iteration = 0;
     while(true){
+        cout << x0 << ' ' << y0 << endl;
         vector<vector<ld>>matrix = {
                 {system_dx[sys].first(x0, y0), system_dy[sys].first(x0, y0)},
                 {system_dx[sys].second(x0, y0), system_dy[sys].second(x0, y0)}
@@ -17,13 +18,15 @@ void solve_sys(ld x0, ld y0, int sys, ld eps=0.01){
         vector<ld>b = {
                 -systems[sys].first(x0, y0), -systems[sys].second(x0, y0)
         };
-        //print_matrix(SIZE, matrix);
-        //print_vector(SIZE, b, "b");
+        print_matrix(SIZE, matrix);
+        print_vector(SIZE, b, "b");
         x = gauss(SIZE, matrix, b);
+        cout << "! " << x[0] << ' ' << x[1] << endl;
         x[0] += x0;
         x[1] += y0;
         iteration++;
         if(abs(x[0] - x0) <= eps && abs(x[1] - y0) <= eps) break;
+        //if(iteration > 20) break;
         x0 = x[0]; y0 = x[1];
     }
     cout << setprecision(10) << fixed;

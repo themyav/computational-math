@@ -102,9 +102,11 @@ vector<ld> gauss(int n, vector<vector<ld>>&matrix, vector<ld>&b){
     make_triangle(n, matrix, b);
     int solution = check_rang(n, matrix, b);
     if(solution == NO_SOL) {
+        print_message("No solution");
         exit(0);
     }
     else if(solution == ENDLESS_SOL){
+        print_message("Endless number of solutions");
         exit(0);
     }
     return count_x(n, matrix, b);

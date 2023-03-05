@@ -57,7 +57,7 @@ void solve_equation(){
     print_message("Введите номер уравнения, которое вы хотите решить");
     ifstream fin("/home/kristina/CLionProjects/counting-math/Lab-2/resource/equations");
     string s;
-    int cnt = 0;
+    int cnt = 1;
     while (getline(fin, s)) {
         cout << "№" << cnt << ": " << s << endl;
         cnt++;
@@ -66,7 +66,7 @@ void solve_equation(){
     //TODO
     string num;
     cin >> num;
-    choose_equation_method(stoi(num));
+    choose_equation_method(stoi(num) - 1);
 }
 
 void choose_option(){
@@ -91,7 +91,7 @@ void choose_option(){
 }
 
 int main(){
-    freopen("/home/kristina/CLionProjects/counting-math/Lab-2/resource/input.txt", "r", stdin);
+    //freopen("/home/kristina/CLionProjects/counting-math/Lab-2/resource/input.txt", "r", stdin);
     choose_option();
     return 0;
 }
