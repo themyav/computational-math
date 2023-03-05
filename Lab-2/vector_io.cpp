@@ -1,5 +1,9 @@
 #include "headers/vector_io.h"
 
+void print_separator(){
+    cout << "___________________________________________________________" << endl;
+}
+
 void print_error(string s){
     cerr << s << endl;
     //exit(0);

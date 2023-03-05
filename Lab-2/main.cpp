@@ -17,6 +17,7 @@ void choose_equation_method(int eq){
     //TODO
     string num;
     cin >> num;
+    print_separator();
     if(num == "1") binary_division(eq);
     else if(num == "2") secant(eq);
     else if(num == "3") simple_iteration(eq);
@@ -28,6 +29,7 @@ void choose_system_method(int sys){
     //TODO
     string num;
     cin >> num;
+    print_separator();
     if(num == "1") newton_system(sys);
 }
 
