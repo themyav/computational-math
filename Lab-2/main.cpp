@@ -2,6 +2,7 @@
 #include "headers/vector_io.h"
 #include "methods/headers/binary_division.h"
 #include "methods/headers/secant.h"
+#include "methods/headers/simple_iteration.h"
 
 
 using namespace std;
@@ -17,6 +18,7 @@ void choose_equation_method(int eq){
     cin >> num;
     if(num == "1") binary_division(eq);
     else if(num == "2") secant(eq);
+    else if(num == "3") simple_iteration(eq);
 }
 
 void solve_system(){

@@ -1,8 +1,4 @@
-//
-// Created by kristina on 3/4/23.
-//
-
 #ifndef COUNTING_MATH_SIMPLE_ITERATION_H
 #define COUNTING_MATH_SIMPLE_ITERATION_H
-
+void simple_iteration(int eq);
 #endif //COUNTING_MATH_SIMPLE_ITERATION_H
