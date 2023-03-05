@@ -33,7 +33,7 @@ void read_vector(int n, vector<ld>&vec){
 }
 
 void print_vector(int n, vector<ld>&vec,  string desc=""){
-    for(int i = 0; i < int(vec.size()); i++){
+    for(int i = 0; i < n; i++){
         cout << desc << i << " = " << setw(10) << setprecision(25) << fixed << vec[i] << endl;
     }
     cout << "\n";

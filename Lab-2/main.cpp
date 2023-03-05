@@ -3,6 +3,7 @@
 #include "methods/headers/binary_division.h"
 #include "methods/headers/secant.h"
 #include "methods/headers/simple_iteration.h"
+#include "methods/headers/newton_system.h"
 
 
 using namespace std;
@@ -21,14 +22,38 @@ void choose_equation_method(int eq){
     else if(num == "3") simple_iteration(eq);
 }
 
-void solve_system(){
+void choose_system_method(int sys){
     print_message("Выберите метод для решения систем нелинейных уравнений");
+    print_message("1 - метод Ньютона");
+    //TODO
+    string num;
+    cin >> num;
+    if(num == "1") newton_system(sys);
+}
+
+void solve_system(){
+    print_message("Введите номер системы, которую вы хотите решить");
+    ifstream fin("/home/kristina/CLionProjects/counting-math/Lab-2/resource/systems");
+    string s;
+    int cnt = 0;
+    while (getline(fin, s)) {
+        if(s == "{") {
+            cout << "№" << cnt << ": " << endl;
+            cnt++;
+        }
+        cout << s << endl;
+    }
+    fin.close();
+    //TODO
+    string num;
+    cin >> num;
+    choose_system_method(stoi(num));
 
 }
 
 void solve_equation(){
     print_message("Введите номер уравнения, которое вы хотите решить");
-    ifstream fin("/home/kristina/CLionProjects/counting-math/Lab-2/equations");
+    ifstream fin("/home/kristina/CLionProjects/counting-math/Lab-2/resource/equations");
     string s;
     int cnt = 0;
     while (getline(fin, s)) {
