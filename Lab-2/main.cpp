@@ -62,7 +62,7 @@ void choose_option(){
 }
 
 int main(){
-    freopen("/home/kristina/CLionProjects/counting-math/Lab-2/input.txt", "r", stdin);
+    freopen("/home/kristina/CLionProjects/counting-math/Lab-2/resource/input.txt", "r", stdin);
     choose_option();
     return 0;
 }
