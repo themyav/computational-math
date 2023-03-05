@@ -1,0 +1,8 @@
+//
+// Created by kristina on 3/4/23.
+//
+
+#ifndef COUNTING_MATH_NEWTON_SYSTEM_H
+#define COUNTING_MATH_NEWTON_SYSTEM_H
+
+#endif //COUNTING_MATH_NEWTON_SYSTEM_H
