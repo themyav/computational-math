@@ -16,7 +16,7 @@ void solve(ld a, ld b, int eq, ld eps=1e-3){
         x0 = b;
         x1 = b - 2*eps;
     }
-    int iteration = 0;
+    int iteration = 1;
     while(abs(x1 - x0) > eps && abs(x1) > eps){
         ld x2 = x1 - (x1 - x0) / (f[eq](x1) - f[eq](x0)) * f[eq](x1);
         x0 = x1;

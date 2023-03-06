@@ -7,13 +7,15 @@ static void solve(ld a, ld b, int eq, const ld eps = 1e-3){
     ld old_a = a, old_b = b;
     vector<equation>f= get_equations();
     int iteration = 0;
-    while(b - a > eps){
+    while(abs(b - a) > eps){
         iteration++;
         ld x = (a + b) / 2;
+        cout << setprecision(3) << fixed;
+        //cout << a << ' ' << b << ' ' << x << ' ' << f[eq](a) << ' ' << f[eq](b) << ' ' << f[eq](x) << ' ' << abs(a-b) << endl;
         if(abs(x) < eps) break;
-        if(f[eq](a) * f[eq](b) > 0) a = x;
+        if(f[eq](a) * f[eq](x) > 0) a = x;
         else b = x;
-        cout << a << ' ' << b << ' ' << f[eq](a) << ' ' << f[eq](b) << endl;
+
     }
     ld x = (a + b) / 2;
     cout << setprecision(10) << fixed;

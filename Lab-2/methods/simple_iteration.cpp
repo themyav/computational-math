@@ -22,12 +22,17 @@ void solve(ld x0, ld a, ld b, int eq, ld eps=1e-3){
         cout << "Метод простой итерации будет расходиться на данном интервале" << endl;
         return;
     }
-
     ld x1 = phi(x0, lambda, f[eq]);
-    int iteration = 0;
+    //cout << setprecision(3) << fixed;
+    //cout << x0 << ' ' << x1 << ' ' << phi(x1, lambda, f[eq]) << ' ' << f[eq](x1) << ' ' << abs(x0 - x1) << endl;
+    int iteration = 1;
     while(abs(x1 - x0) > eps){
         x0 = x1;
         x1 = phi(x1, lambda, f[eq]);
+        //cout << setprecision(3) << fixed;
+
+        //cout << x0 << ' ' << x1 << ' ' << phi(x1, lambda, f[eq]) << ' ' << f[eq](x1) << ' ' << abs(x0 - x1) << endl;
+
         iteration++;
     }
     cout << setprecision(10) << fixed;
